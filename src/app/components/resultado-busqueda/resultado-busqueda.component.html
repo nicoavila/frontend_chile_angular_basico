@@ -1,0 +1,15 @@
+<div class="row" *ngIf="personajes.length > 0">
+  <div class="col s12 l4" *ngFor="let personaje of personajes">
+    <div class="card">
+      <div class="card-image">
+        <img [src]="personaje.image">
+      </div>
+      <div class="card-content">
+        <h5>{{personaje.name}}</h5>
+      </div>
+      <div class="card-action">
+        <a href="#">Ver Detalle</a>
+      </div>
+    </div>
+  </div>
+</div>
