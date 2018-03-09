@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ApiService } from './services/api/api.service';
 import { ListaPersonajesComponent } from './pages/lista-personajes/lista-personajes.component';
 import { DetallePersonajeComponent } from './pages/detalle-personaje/detalle-personaje.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -21,11 +23,18 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     ResultadoBusquedaComponent,
     ListaPersonajesComponent,
     DetallePersonajeComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: '', redirectTo: 'listar-personajes', pathMatch: 'full' },
+      { path: 'listar-personajes', component: ListaPersonajesComponent },
+      { path: 'detalle-personaje/:id', component: DetallePersonajeComponent },
+      { path: '**', redirectTo: '404'}
+    ])
   ],
   providers: [
     ApiService

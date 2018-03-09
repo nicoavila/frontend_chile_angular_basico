@@ -17,8 +17,8 @@ export class ApiService {
   ) { }
 
 
-  public getCharacters() {
-    return this.http.get(environment.endpoint_base_url);
+  public getCharacters(page) {
+    return this.http.get(environment.endpoint_base_url + '?page=' + page);
   }
 
 }
