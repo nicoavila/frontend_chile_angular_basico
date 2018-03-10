@@ -1,4 +1,25 @@
-# Workshop Angular Básico - Front End Chile
+<img src="https://s3-us-west-2.amazonaws.com/nicoavila/front-end-chile-logo.png" width="200">
 
-La comunidad Front-End Chile tiene el agrado de presentar su taller de Introducción a Angular 5, orientado a personas que ya posean los conocimientos mínimos de Javascript, pero que deseen aprender a utilizar un framework.
-En esta oportunidad se revisará el framework Angular 5. Comenzaremos entendiendo TypeScript: un lenguaje superset de JavaScript, que nos permite trabajar con este framework. Luego revisaremos cada uno de los bloques fundamentales del lenguaje para así dar paso a nuestro taller, en donde crearemos una aplicación web íntegra usando Angular.
+# Workshop Comunidad Front-End Chile: Angular Básico
+3er Workshop de JavaScript elaborado para la Comunidad Front-end Chile: Angular Básico. En este taller el alumno profundizará conceptos tales como:
+
+* Descargar las herramientas necesarias para trabajar con Angular
+* Introducción al terminal, Angular CLI y npm
+* Introducción a TypeScript
+* Módulos y Decoradores
+* Generar un nuevo proyecto Angular
+* Creación, uso de componentes y templates
+* Data Binding
+* Routes
+* Servicios
+* HTTP
+
+El taller tiene una duración de **6hrs**.
+
+## Inscripciones
+Las inscripciones son mediante [Flow](https://www.flow.cl/app/web/pagarBtnPago.php?token=1pxcpri). Solo hay **30 cupos** disponibles!
+
+## Pre-requisitos
+
+* Poseer nociones básicas de JavaScript.
+* Instalar NodeJS en su computador [Ver instrucciones en NodeJS.org](https://nodejs.org/en/).

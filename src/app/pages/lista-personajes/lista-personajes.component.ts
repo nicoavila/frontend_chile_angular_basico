@@ -27,12 +27,16 @@ export class ListaPersonajesComponent implements OnInit {
       this.api.searchCharacters(query).subscribe((personajes: any) => {
         this.personajes = personajes.results;
         this.enablePaginator = false;
+      }, (error) => {
+        this.personajes = [];
       });
     } else {
       this.api.getCharacters(page).subscribe((personajes: any) => {
         this.enablePaginator = true;
         this.personajes = personajes.results;
         this.infoPaginacion = personajes.info;
+      }, (error) => {
+        this.personajes = [];
       });
     }
   }

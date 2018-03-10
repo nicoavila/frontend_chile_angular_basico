@@ -1,3 +1,42 @@
-<p>
-  detalle-personaje works!
-</p>
+<div class="personaje_container">
+  <div class="container" *ngIf="personaje">
+    <div class="row">
+      <div class="col s6">
+          <div class="card">
+            <div class="card-image">
+              <img [src]="personaje.image">
+            </div>
+            <div class="card-content">
+              <h5>{{personaje.name}}</h5>
+            </div>
+          </div>
+      </div>
+
+      <div class="col s6">
+        <table class="striped">
+          <tbody>
+            <tr>
+              <th>Gender</th>
+              <td>{{personaje.gender}}</td>
+            </tr>
+
+            <tr>
+              <th>Origin</th>
+              <td>{{personaje.origin.name}}</td>
+            </tr>
+
+            <tr>
+              <th>Species</th>
+              <td>{{personaje.species}}</td>
+            </tr>
+
+            <tr>
+              <th>Status</th>
+              <td>{{personaje.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
