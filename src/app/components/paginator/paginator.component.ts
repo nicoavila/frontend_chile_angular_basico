@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
 @Component({
@@ -6,7 +6,7 @@ import { EventEmitter } from '@angular/core';
   templateUrl: './paginator.component.html',
   styleUrls: ['./paginator.component.css']
 })
-export class PaginatorComponent implements OnInit {
+export class PaginatorComponent implements OnInit  {
 
   @Input() info;
   @Input() paginaActual;
@@ -28,5 +28,4 @@ export class PaginatorComponent implements OnInit {
   public cambiaPagina(numeroPagina): void {
     this.seleccionPagina.emit(numeroPagina);
   }
-
 }

@@ -21,4 +21,7 @@ export class ApiService {
     return this.http.get(environment.endpoint_base_url + '?page=' + page);
   }
 
+  public searchCharacters(name) {
+    return this.http.get(environment.endpoint_base_url + '?name=' + name);
+  }
 }

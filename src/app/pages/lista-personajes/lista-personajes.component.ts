@@ -11,6 +11,7 @@ export class ListaPersonajesComponent implements OnInit {
   public paginaActual = 1;
   public personajes: any = [];
   public infoPaginacion;
+  public enablePaginator = true;
 
   constructor(
     private api: ApiService
@@ -21,16 +22,30 @@ export class ListaPersonajesComponent implements OnInit {
   ngOnInit() {
   }
 
-  private buscarPersonajes(page = 1) {
-    this.api.getCharacters(page).subscribe((personajes: any) => {
-      this.personajes = personajes.results;
-      this.infoPaginacion = personajes.info;
-    });
+  private buscarPersonajes(page = 1, query = '') {
+    if (query != '') {
+      this.api.searchCharacters(query).subscribe((personajes: any) => {
+        this.personajes = personajes.results;
+        this.enablePaginator = false;
+      });
+    } else {
+      this.api.getCharacters(page).subscribe((personajes: any) => {
+        this.enablePaginator = true;
+        this.personajes = personajes.results;
+        this.infoPaginacion = personajes.info;
+      });
+    }
   }
 
   public cambiaPagina(pagina) {
     this.personajes = [];
     this.paginaActual = pagina;
     this.buscarPersonajes(pagina);
+  }
+
+  public realizarBusqueda(query) {
+    this.personajes = [];
+    this.paginaActual = 1;
+    this.buscarPersonajes(null, query);
   }
 }

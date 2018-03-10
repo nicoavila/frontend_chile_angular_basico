@@ -1,8 +1,8 @@
 <div class="row">
-  <form class="col s12">
+  <form class="col s12" (ngSubmit)="buscar(buscarForm.value)" [formGroup]="buscarForm">
     <div class="row">
       <div class="input-field col s10">
-        <input placeholder="Ingrese el nombre del personaje que desea buscar" id="nombre_personaje" type="text" class="validate">
+        <input type="text" formControlName="query" placeholder="Ingrese el nombre del personaje que desea buscar" id="nombre_personaje">
       </div>
 
       <div class="input-field col s2">
